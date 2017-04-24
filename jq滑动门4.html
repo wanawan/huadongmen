@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滑动门</title>
+		<style type="text/css">
+			body,ul{
+				padding:0px;
+				margin:0px;
+			}
+			#nav{
+				width:300px;
+				height:400px;
+				border:1px solid #FF0000;
+				background:#fff;
+				position:relative;
+			}
+			#nav .btn{
+				width:100px;
+				height:30px;
+				background:url(img/btn.gif);
+				border-top:1px solid #000000;
+				border-bottom:1px solid #000000;
+				border-left:1px solid #000000;
+				margin-left:1px;
+				position:absolute;
+			}
+			.btn a{
+				padding-left:25px;
+				text-decoration: none;
+				font-size:large;
+				color:#000000;
+			}
+			.content{
+				display:none;
+				padding-left:5px;
+				color:#000000;
+				margin-top:40px;
+				
+			}
+			#nav .one{
+				left:0px;
+				top:0px;
+			}
+			#nav .two{
+				left:100px;
+				top:0px;
+			}
+			#nav .three{
+				left:200px;
+				top:0px;
+				border-right:1px solid #000000;
+			}
+			#nav .active{
+				font-weight: bold;
+				border-bottom:2px solid #FFFFFF;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".btn").mouseover(function(){
+					$(this).addClass("active").next(".content").show().end().siblings().removeClass("active").next(".content").hide();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="nav">
+			<div class="btn one"><a href="#">新闻</a></div>
+			<div class="content" style="display:block;">
+				<ul>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+				</ul>
+			</div>
+			<div class="btn two"><a href="#">图片</a></div>
+			<div class="content">
+				<ul>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+				</ul>
+			</div>
+			<div class="btn three"><a href="#">军事</a></div>
+			<div class="content">
+				<ul>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滑动门第三遍</title>
+		<style>
+			body,ul{
+				margin:0px;
+				padding:0px;
+			}
+			#nav{
+				position:relative;
+				padding-top:20px;
+			}
+			#nav a{
+				text-decoration: none;
+				font-size:24px;
+				color:#000000;
+				padding-left:20px;
+				display:block;
+			}
+			#nav .btn{
+				background:url(img/btn.gif);
+				width:100px;
+		        height:30px;
+		        border-top:1px solid #000000;
+		        border-bottom:1px solid #000000;
+		        border-left:1px solid #000000;
+		        position:absolute;
+			}
+			#nav .content ul{
+				list-style-type:none;
+			    
+			    
+			}
+			#nav .one{
+				top:0px;
+				left:0px;
+			}
+			#nav .two{
+				top:0px;
+				left:100px;
+			}
+			#nav .three{
+				top:0px;
+				left:200px;
+				border-right:1px solid #CCCCCC;
+			}
+			#nav .content{
+				display:none;
+				background:#FFFFFF;
+		        width:300px;
+		        height:200px;
+		        padding-top:30px;
+			}
+			#nav .active{
+				font-weight: bold;
+				color:#FFFFFF;
+				border-bottom:1px solid #CCCCCC;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".btn").mouseover(function(){
+					$(this).addClass("active").next(".content").show().end().siblings().removeClass("active").next(".content").hide();
+				})
+			})
+		</script>
+	</head>
+	<body> 
+		<div id="nav">
+			<div class="btn one"><a href="#">新闻</a></div>
+			<div class="content" style="display:block";>
+				<ul>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+					<li>新闻</li>
+				</ul>
+			</div>
+			<div class="btn two"><a href="#">图片</a></div>
+			<div class="content">
+				<ul>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+					<li>图片</li>
+				</ul>
+			</div>
+			<div class="btn three"><a href="#">军事</a></div>
+			<div class="content">
+				<ul>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+					<li>军事</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
